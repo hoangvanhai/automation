@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/operations-icon-9.png</file>
+        <file>images/operations.png</file>
+        <file>images/sensor.png</file>
+        <file>images/system.png</file>
+        <file>images/left.png</file>
+        <file>images/right.png</file>
+        <file>images/board2.png</file>
+        <file>images/fpga.png</file>
+        <file>images/nguonphat.png</file>
+        <file>images/sensorIcon.png</file>
+        <file>images/anten.png</file>
+        <file>images/gpsdo.png</file>
+        <file>images/system2.png</file>
+    </qresource>
+</RCC>

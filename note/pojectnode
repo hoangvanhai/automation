@@ -1,0 +1,16 @@
+Nội dung công việc:
+- Tạo khung giao diện test                                          d
+- Tạo giao diện cấu hình                                            d
+- Tạo giao diện test cho sensor                                     d
+- Tạo kết nối với server dựa trên giao tiếp SSL TCP                 d
+- Tạo kết nối với máy đo dựa trên giao tiếp TCP                     d
+- Đọc file dữ liệu test làm tham số test                            d
+- Tạo chương trình chạy test case theo tham số test                 d
+
+- Tạo các lệnh điều khiển server qua giao tiếp SSL                  n
+- Tạo các lệnh điều khiển máy đo qua giao tiếp TCP                  n
+- Tạo các hàm cập nhật kêt quả đo lên màn hình test                 n
+- Tạo các hàm ghi kết quả ra fike .xlsx                             n
+- Tạo các kịch bản test theo bài test cụ thể                        n
+- Tạo kết nối đến cơ sở dữ lệu MSSQL (đang sử dụng cho quản lý sản
+xuất các máy thông tin quân sự)                                     n

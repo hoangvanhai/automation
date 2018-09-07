@@ -1,0 +1,367 @@
+#ifndef OBJECTTABLE
+#define OBJECTTABLE
+#include<QObject>
+#include<QMetaObject>
+#include<QMetaProperty>
+#include "dataobject.h"
+#include<macro.h>
+#include <QDateTime>
+class SI3CongDoan:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3CongDoan() : MA_LO_SX(0), MA_CONG_DOAN(0){}
+    ~SI3CongDoan(){}
+
+    OBJECT_PROPERTY(int, MA_LO_SX)
+    OBJECT_PROPERTY(int, MA_CONG_DOAN)
+    OBJECT_PROPERTY(double, TG_YEU_CAU)
+    OBJECT_PROPERTY(double, TG_TOI_DA)
+    OBJECT_PROPERTY(QString, TEN_CONG_DOAN)
+    OBJECT_PROPERTY(QString, MA_PP_NHAP_LIEU)
+    OBJECT_PROPERTY(QString, MO_TA_CONG_DOAN)
+    OBJECT_PROPERTY(QDateTime, NGAY_TAO)
+    OBJECT_PROPERTY(QString, NGUOI_TAO)
+};
+
+class SI3LoaiMach:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3LoaiMach(){}
+    ~SI3LoaiMach(){}
+
+    OBJECT_PROPERTY(int, MA_LO_SX)
+    OBJECT_PROPERTY(int, LOAI_MACH)
+    OBJECT_PROPERTY(QString, TEN_MACH)
+    OBJECT_PROPERTY(QString, SERIAL_PREFIX)
+    OBJECT_PROPERTY(int, IS_DEVICE)
+    OBJECT_PROPERTY(QString, MO_TA)
+    OBJECT_PROPERTY(QDateTime, NGAY_TAO)
+    OBJECT_PROPERTY(QString, NGUOI_TAO)
+};
+class SI3LoSX:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3LoSX(){}
+    ~SI3LoSX(){}
+
+    OBJECT_PROPERTY(int, ID_LO_SX)
+    OBJECT_PROPERTY(QString, TEN_LO_SX)
+    OBJECT_PROPERTY(QString, DIA_DIEM)
+    OBJECT_PROPERTY(QDate, TG_BAT_DAU)
+    OBJECT_PROPERTY(QDate, TG_KET_THUC)
+    OBJECT_PROPERTY(QString, THONG_TIN)
+    OBJECT_PROPERTY(QString, SERIAL_MAY)
+    OBJECT_PROPERTY(long, SO_LUONG_MAY)
+};
+class SI3MachBaiDo:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MachBaiDo(){}
+    ~SI3MachBaiDo(){}
+
+    OBJECT_PROPERTY(int, ID_LO_SX)
+    OBJECT_PROPERTY(int, ID_BAI_DO)
+    OBJECT_PROPERTY(int, LOAI_MACH)
+    OBJECT_PROPERTY(QString, TEN_BAI_DO)
+    OBJECT_PROPERTY(QString, TEN_NGAN)
+    OBJECT_PROPERTY(QString, DIEU_KIEN)
+    OBJECT_PROPERTY(QString, NHAT_KY)
+    OBJECT_PROPERTY(QDate, TG_THAY_DOI)
+};
+class SI3MachCTieu:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MachCTieu(){}
+    ~SI3MachCTieu(){}
+
+    OBJECT_PROPERTY(int, ID_LO_SX)
+    OBJECT_PROPERTY(int, LOAI_MACH)
+    OBJECT_PROPERTY(int, ID_BAI_DO)
+    OBJECT_PROPERTY(int, ID_CHI_TIEU)
+    OBJECT_PROPERTY(QString, TEN_CHI_TIEU)
+    OBJECT_PROPERTY(QString, CHE_DO)
+    OBJECT_PROPERTY(double,TAN_SO)
+    OBJECT_PROPERTY(QString, DON_VI)
+    OBJECT_PROPERTY(double,LSLi)
+    OBJECT_PROPERTY(double,USLi)
+    OBJECT_PROPERTY(double,LSLe)
+    OBJECT_PROPERTY(double,USLe)
+};
+
+class SI3MachDs:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MachDs(){}
+    ~SI3MachDs(){}
+
+    OBJECT_PROPERTY(int, IDLoSX)
+    OBJECT_PROPERTY(int, LOAI_MACH)
+    OBJECT_PROPERTY(int, IDMach)
+    OBJECT_PROPERTY(QString, SERIAL_MACH)
+    OBJECT_PROPERTY(int, MA_KHAU_TRUOC)
+    OBJECT_PROPERTY(int, TRANG_THAI_KHAU_TRUOC)
+    OBJECT_PROPERTY(QDateTime,THOI_GIAN_KHAU_TRUOC)
+    OBJECT_PROPERTY(QString, NHAT_KY_THU_GON)
+    OBJECT_PROPERTY(QString,PHIEN_BAN_PHAN_MEM)
+    OBJECT_PROPERTY(QString,PHIEN_BAN_PHAN_CUNG)
+    OBJECT_PROPERTY(QDateTime,NGAY_TAO)
+    OBJECT_PROPERTY(QString,NGUOI_TAO)
+};
+
+
+class SI3MachEvents:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MachEvents(){}
+    ~SI3MachEvents(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,ID_BAI_DO)
+    OBJECT_PROPERTY(int,LOAI_MACH)
+    OBJECT_PROPERTY(int,ID_MACH)
+    OBJECT_PROPERTY(QDateTime, THOI_GIAN)
+    OBJECT_PROPERTY(QString,THIET_BI)
+    OBJECT_PROPERTY(QString, NGUOI_DO)
+    OBJECT_PROPERTY(QString,DIA_DIEM)
+    OBJECT_PROPERTY(QString,GHI_CHU)
+    OBJECT_PROPERTY(QString,KET_LUAN)
+    OBJECT_PROPERTY(QString,MA_XAC_THUC)
+};
+class SI3MachKqDo:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MachKqDo(){}
+    ~SI3MachKqDo(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,LOAI_MACH)
+    OBJECT_PROPERTY(int,ID_BAI_DO)
+    OBJECT_PROPERTY(int,ID_MACH)
+    OBJECT_PROPERTY(int,ID_CHI_TIEU)
+    OBJECT_PROPERTY(QDateTime, THOI_GIAN)
+    OBJECT_PROPERTY(double, KET_QUA)
+    OBJECT_PROPERTY(double, KET_QUA_MIN)
+    OBJECT_PROPERTY(double,KET_QUA_MAX)
+    OBJECT_PROPERTY(QString, KET_LUAN)
+    OBJECT_PROPERTY(QString,MA_XAC_THUC)
+};
+class SI3MachMayDs:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MachMayDs(){}
+    ~SI3MachMayDs(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,ID_MAY)
+    OBJECT_PROPERTY(int,ID_MACH)
+    OBJECT_PROPERTY(QString,SERIAL_MAY)
+    OBJECT_PROPERTY(QString,SERIAL_MACH)
+};
+
+class SI3MachPhKT:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MachPhKT(){}
+    ~SI3MachPhKT(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,ID_BAI_DO)
+    OBJECT_PROPERTY(int,LOAI_MACH)
+    OBJECT_PROPERTY(int,ID_MACH)
+    OBJECT_PROPERTY(int,ID_CHI_TIEU)
+    OBJECT_PROPERTY(QDateTime, THOI_GIAN)
+    OBJECT_PROPERTY(QString, THIET_BI)
+    OBJECT_PROPERTY(QString, NGUOI_DO)
+    OBJECT_PROPERTY(QString,DIA_DIEM)
+    OBJECT_PROPERTY(QString,GHI_CHU)
+    OBJECT_PROPERTY(QString,XAC_THUC)
+    OBJECT_PROPERTY(QString, KET_LUAN)
+    OBJECT_PROPERTY(QString,MA_XAC_THUC)
+};
+
+class SI3MaLechNap:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MaLechNap(){}
+    ~SI3MaLechNap(){}
+
+    OBJECT_PROPERTY(int,MA_LENH)
+    OBJECT_PROPERTY(int,LOAI_MACH)
+    OBJECT_PROPERTY(QString,MO_TA)
+    OBJECT_PROPERTY(QString,DOI_TUONG)
+    OBJECT_PROPERTY(QString,THAO_TAC)
+    OBJECT_PROPERTY(QString, QUY_UOC_SERIAL)
+    OBJECT_PROPERTY(QDateTime, NGAY_TAO)
+    OBJECT_PROPERTY(QString, NGUOI_TAO)
+};
+
+class SI3MayBaiDo:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MayBaiDo(){}
+    ~SI3MayBaiDo(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,ID_BAI_DO)
+    OBJECT_PROPERTY(QString,TEN_BAI_DO)
+    OBJECT_PROPERTY(QString,TEN_NGAN)
+    OBJECT_PROPERTY(QString,DIEU_KIEN)
+    OBJECT_PROPERTY(QString, NHAT_KY)
+    OBJECT_PROPERTY(QDateTime, TG_THAY_DOI)
+};
+
+class SI3MayCTieu:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MayCTieu(){}
+    ~SI3MayCTieu(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,ID_BAI_DO)
+    OBJECT_PROPERTY(int,ID_CHI_TIEU)
+    OBJECT_PROPERTY(QString,CHE_DO)
+    OBJECT_PROPERTY(double,TAN_SO)
+    OBJECT_PROPERTY(QString, DON_VI)
+    OBJECT_PROPERTY(double, LSLi)
+    OBJECT_PROPERTY(double, USLi)
+    OBJECT_PROPERTY(double, LSLe)
+    OBJECT_PROPERTY(double, USLe)
+};
+
+class SI3MayDs:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MayDs(){}
+    ~SI3MayDs(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,ID_MAY)
+    OBJECT_PROPERTY(QString,SERIAL_MAY)
+    OBJECT_PROPERTY(QString,PHIEN_BAN_CO_KHI)
+    OBJECT_PROPERTY(int,MA_KHAU_TRUOC)
+    OBJECT_PROPERTY(QDateTime, THOI_GIAN_KHAU_TRUOC)
+    OBJECT_PROPERTY(QString, NHAT_KY_THU_GON)
+    OBJECT_PROPERTY(QDateTime, NGAY_TAO)
+    OBJECT_PROPERTY(QString, NGUOI_TAO)
+    OBJECT_PROPERTY(QString, MA_XAC_THUC)
+};
+class SI3MayDsLoi:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MayDsLoi(){}
+    ~SI3MayDsLoi(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,ID_LOI)
+    OBJECT_PROPERTY(QString,TEN_LOI)
+    OBJECT_PROPERTY(QString,LOAI_LOI)
+    OBJECT_PROPERTY(QString,NGUYEN_NHAN)
+    OBJECT_PROPERTY(QString, SUA_CHUA)
+
+};
+class SI3MayEvents:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MayEvents(){}
+    ~SI3MayEvents(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,ID_BAI_DO)
+    OBJECT_PROPERTY(int,ID_MAY)
+    OBJECT_PROPERTY(QDateTime,THOI_GIAN)
+    OBJECT_PROPERTY(QString,THIET_BI)
+    OBJECT_PROPERTY(QString, NGUOI_DO)
+    OBJECT_PROPERTY(QString, DIA_DIEM)
+    OBJECT_PROPERTY(QString, GHI_CHU)
+    OBJECT_PROPERTY(QString, KET_LUAN)
+    OBJECT_PROPERTY(QString, MA_XAC_THUC)
+};
+class SI3MayKqDo:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MayKqDo(){}
+    ~SI3MayKqDo(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,ID_BAI_DO)
+    OBJECT_PROPERTY(int,ID_MAY)
+    OBJECT_PROPERTY(QDateTime,THOI_GIAN)
+    OBJECT_PROPERTY(int,ID_CHI_TIEU)
+    OBJECT_PROPERTY(double, KET_QUA)
+    OBJECT_PROPERTY(double, KET_QUA_MIN)
+    OBJECT_PROPERTY(double, KET_QUA_MAX)
+    OBJECT_PROPERTY(QString, KET_LUAN)
+    OBJECT_PROPERTY(QString, MA_XAC_THUC)
+};
+class SI3MayPhKT:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3MayPhKT(){}
+    ~SI3MayPhKT(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,ID_BAI_DO)
+    OBJECT_PROPERTY(int,ID_MAY)
+    OBJECT_PROPERTY(QDateTime,THOI_GIAN)
+    OBJECT_PROPERTY(QString,THIET_BI)
+    OBJECT_PROPERTY(QString, NGUOI_DO)
+    OBJECT_PROPERTY(QString, DIA_DIEM)
+    OBJECT_PROPERTY(QString, GHI_CHU)
+    OBJECT_PROPERTY(QString, XAC_THUC)
+    OBJECT_PROPERTY(QString, KET_LUAN)
+    OBJECT_PROPERTY(QString, MA_XAC_THUC)
+};
+
+class SI3QuyTringDs:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3QuyTringDs(){}
+    ~SI3QuyTringDs(){}
+
+    OBJECT_PROPERTY(int,ID_LO_SX)
+    OBJECT_PROPERTY(int,MA_QUY_TRINH)
+    OBJECT_PROPERTY(int,LOAI_QUY_TRINH)
+    OBJECT_PROPERTY(QString,TEN_QUY_TRINH)
+    OBJECT_PROPERTY(QString,MO_TA)
+    OBJECT_PROPERTY(QDateTime, TG_AP_DUNG)
+    OBJECT_PROPERTY(QDateTime, TG_KET_THUC)
+
+};
+class SI3QuyTringSX:public DataObject
+{
+    Q_OBJECT
+public:
+    SI3QuyTringSX(){}
+    ~SI3QuyTringSX(){}
+
+    OBJECT_PROPERTY(QString,TEN_MODEL)
+    OBJECT_PROPERTY(int,MA_QUY_TRINH)
+    OBJECT_PROPERTY(int,MA_LO_SX)
+    OBJECT_PROPERTY(int,MA_CONG_DOAN)
+    OBJECT_PROPERTY(int,MA_CONG_DOAN_SAU_PASS)
+    OBJECT_PROPERTY(int,MA_CONG_DOAN_SAU_FAIL)
+    OBJECT_PROPERTY(int,IS_BEGIN)
+    OBJECT_PROPERTY(int,ORDER_ID)
+
+};
+#endif // OBJECTTABLE
+
